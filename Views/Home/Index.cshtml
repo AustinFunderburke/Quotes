@@ -1,0 +1,70 @@
+﻿@model IEnumerable<LabW12Quotes.Models.Entities.Quote>
+
+@{
+    ViewData["Title"] = "Quotes";
+}
+
+<h2>@ViewData["Title"]</h2>
+<button id="createQuoteBtn" class="btn btn-primary btn-sm">Create New Quote</button>
+<div id="createArea">
+    <partial name="_createQuote" model="new Quote()" />
+   
+</div>
+
+<h2 id="theQuote"></h2>
+<h3 id="whoSaidIt"></h3>
+
+@section scripts{
+    <script src="~/js/homeIndex.js"></script>
+}
+
+
+
+@*@model IEnumerable<LabW12Quotes.Models.Entities.Quote>
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TheQuote)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WhoSaidIt)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TheQuote)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WhoSaidIt)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
